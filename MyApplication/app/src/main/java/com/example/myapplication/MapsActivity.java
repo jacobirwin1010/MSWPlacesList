@@ -22,6 +22,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.VisibleRegion;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.JsonObject;
 import com.google.maps.android.SphericalUtil;
 
@@ -60,6 +61,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         adapter = new ListAdapter(this, currentReturnedPlaces);
         recyclerView.setAdapter(adapter);
         recyclerView.setVisibility(View.VISIBLE);
+
+            FloatingActionButton refreshFab = findViewById(R.id.fabRefreshResults);
+            FloatingActionButton listFab = findViewById(R.id.fabShowList);
+
+            refreshFab.hide();
+            listFab.hide();
+
         }catch (Exception e){
             Log.e("MapsActivity.showList",e.getMessage());
         }
@@ -141,6 +149,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                 RecyclerView recyclerView = findViewById(R.id.rvPlaceResults);
                 recyclerView.setVisibility(View.INVISIBLE);
+
+                FloatingActionButton refreshFab = findViewById(R.id.fabRefreshResults);
+                FloatingActionButton listFab = findViewById(R.id.fabShowList);
+
+                refreshFab.show();
+                listFab.show();
+
             }
         });
 
@@ -178,7 +193,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     MarkerOptions markerToWrite = new MarkerOptions()
                             .position(current.position)
                             .title(current.name)
-                            .snippet("Rating: "+current.rating+"\n"+current.openingHours);
+                            .snippet("Rating: "+current.rating+"|"+current.openingHours);
 
 
                     mMap.addMarker(markerToWrite);
