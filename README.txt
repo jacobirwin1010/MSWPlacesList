@@ -33,3 +33,15 @@ Mention of assumptions is inline in the code, but they are included here just so
 Id like to reiterate- a lot more questions wouldve been asked in a real world scenario
 
 If you have any questions, dont hesitate to email me
+
+INTERVIEW QUESTIONS:
+	How long did you spend completing the assignment? How (if at all) would you change your solution if you had more time?
+A total of around 10 hours over 3 days. If I was to do the project again I would put more thought into the visual design, maybe organising the map and list into a TabView. Based on this I'd be more deliberate with the code design and use Kotlin as opposed to Java.
+
+	Can you describe a feature (perhaps with some reference code) that exists in your chosen programming language that you found particularly useful?
+The google APIs are very intuitive and simple, they're well documented and work flawlessly, this project would not have been possible without them. Libraries and imports were kept to a minimum so there isn't all that much to say on this topic.
+
+	How would you track down a performance issue with yours or another developer's code?
+Using performance monitoring software and load tests. If the software was publicly available then reviews and bug reports would also be considered.
+
+
